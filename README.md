@@ -1,4 +1,7 @@
 # Detroit-Red-Wings
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Ambush3/Detroit-Red-Wings/HEAD)
+
 [![GF-GA.png](https://i.postimg.cc/WzDWZm5W/GF-GA.png)](https://postimg.cc/MfSm2B2V)  
 [![GFGAWL.png](https://i.postimg.cc/GtZMxBNc/GFGAWL.png)](https://postimg.cc/64fL9QtS)  
 [![GFGAWLPTS.png](https://i.postimg.cc/tCxvC5Z7/GFGAWLPTS.png)](https://postimg.cc/dLJj5G9K)  
