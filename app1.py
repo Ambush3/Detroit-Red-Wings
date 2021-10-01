@@ -1,14 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import altair as alt
-from bokeh.plotting import figure
-import plotly.figure_factory as ff
-import cufflinks as cf
-import matplotlib.pyplot as plt
-import matplotlib
-
 import seaborn as sns
+from PIL import Image
 
 det = pd.read_csv('F:\PyCharm\Data Analytics\Sports\Teams.csv')
 
@@ -17,7 +11,13 @@ df = det[det['franchID'] == 'DET']
 df2 = df[df.franchID.str.contains('DET', case=False).replace('null', np.nan).dropna()]
 
 st.title('Detroit Red Wings History')
+st.markdown("The Detroit Red Wings are a professional ice hockey team based in Detroit. They compete in the NHL, and "
+            "are one of the Original Six teams of the league. They were founded in 1926. As of 2021, the Red Wings have"
+            "won the most Stanley Cup championships out of all American teams. The Red Wings are one of the most "
+            "successful and popular franchises in the NHL.")
 
+img=Image.open('redwingslogo.png')
+st.image(img, width=400)
 
 
 st.sidebar.subheader('Explore Stats')
@@ -77,22 +77,3 @@ if st.sidebar.checkbox('Graphics'):
                               palette='Set3')
             fig.tick_params(axis='x', rotation=90)
             st.pyplot()
-# st.sidebar.checkbox('Choose Stats', True, key=1)
-# select = st.sidebar.selectbox('Select a stat', df2['year'])
-#
-# select_data = df2[df2['year']==select]
-# select_status = st.sidebar.radio('Red Wings stats', ('Goals for', 'Goals against', 'pts')
-#
-#                                  )
-#
-# def get_total_dataframe(df2):
-#     total_dataframe = pd.DataFrame({
-#         ''
-#     })
-#
-# base = alt.Chart(df2).encode(
-#     x='year',
-#     y='W'
-# ).properties(height=700)
-
-# st.altair_chart((base.mark_line()))
