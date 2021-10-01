@@ -17,8 +17,9 @@ st.markdown("The Detroit Red Wings are a professional ice hockey team based in D
             "successful and popular franchises in the NHL.")
 
 img=Image.open('redwingslogo.png')
-st.image(img, width=400)
+img2=Image.open('redwingsbanners.jpg')
 
+st.image(img, width=400)
 
 st.sidebar.subheader('Explore Stats')
 st.sidebar.markdown('Tick a box on the side panel to explore the dataset')
