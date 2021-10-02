@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 from PIL import Image
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 
 det = pd.read_csv('F:\PyCharm\Data Analytics\Sports\Teams.csv')
 
@@ -10,16 +12,17 @@ df = det[det['franchID'] == 'DET']
 
 df2 = df[df.franchID.str.contains('DET', case=False).replace('null', np.nan).dropna()]
 
+
+
+img=Image.open('redwingslogo.png')
+st.image(img, width=400)
+
 st.title('Detroit Red Wings History')
 st.markdown("The Detroit Red Wings are a professional ice hockey team based in Detroit. They compete in the NHL, and "
             "are one of the Original Six teams of the league. They were founded in 1926. As of 2021, the Red Wings have"
             "won the most Stanley Cup championships out of all American teams. The Red Wings are one of the most "
             "successful and popular franchises in the NHL.")
 
-img=Image.open('redwingslogo.png')
-img2=Image.open('redwingsbanners.jpg')
-
-st.image(img, width=400)
 
 st.sidebar.subheader('Explore Stats')
 st.sidebar.markdown('Tick a box on the side panel to explore the dataset')
@@ -58,7 +61,7 @@ if st.sidebar.checkbox('Graphics'):
         st.pyplot()
 
     if st.sidebar.checkbox('Histogram | Distplot'):
-        st.subheader('Histogram | Displot')
+        st.subheader('Histogram | Distplot')
         st.info("If there's an error, adjust column name on side panel.")
         if st.checkbox('Dist plot'):
             column_dist_plot = st.sidebar.selectbox("Optional categorical variables (countplot hue)", df2.columns)
